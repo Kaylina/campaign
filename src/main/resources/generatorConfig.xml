@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <!-- 配置文件 -->
+    <properties resource="application.properties"/>
+    <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+        <!-- 去掉注释 -->
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <!-- jdbc -->
+        <jdbcConnection driverClass="${druid.driver-class}" connectionURL="${druid.url2}"
+                        userId="${druid.username2}" password="${druid.password2}">
+        </jdbcConnection>
+        <!-- domain -->
+        <javaModelGenerator targetPackage="com.test.adCampaign.clickiMzAdBase.domain"
+                            targetProject="src/main/java"/>
+        <!-- xml -->
+        <sqlMapGenerator targetPackage="mybatis2.campaign" targetProject="src/main/resources"/>
+        <!-- dao -->
+        <javaClientGenerator targetPackage="com.test.adCampaign.clickiMzAdBase.dao" targetProject="src/main/java"
+                             type="XMLMAPPER"/>
+        <!--通配所有表-->
+        <!--<table tableName="%">-->
+        <table tableName="clicki_mz_ad_base">
+            <!--mysql 配置-->
+            <!--<generatedKey column="SERIAL_ID" sqlStatement="Mysql" identity="true"/>-->
+            <!--oracle 配置-->
+            <!--<generatedKey column="id" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/>-->
+        </table>
+    </context>
+</generatorConfiguration>

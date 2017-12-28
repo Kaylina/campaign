@@ -1,0 +1,45 @@
+{
+    "type": "index_hadoop",
+    "hadoopCoordinates": "org.apache.hadoop:hadoop-client:2.5.1",
+    "spec": {
+        "dataSchema": {
+            "dataSource": "adlemon_spot_base",
+            "parser": {
+                "type": "string",
+                "parseSpec": {
+                    "format": "csv",
+                    "timestampSpec": {
+                        "format": "iso",
+                        "column": "timestamp"
+                    },
+                    "columns": ["timestamp", "date", "ad_mz_campaign_id", "ad_mz_spot_id", "site_id", "view_id", "device_type_id", "pv_world", "click_world", "pv_land", "click_land"],
+                    "dimensionsSpec": {
+                        "dimensions": ["date", "ad_mz_campaign_id", "ad_mz_spot_id", "site_id", "view_id", "device_type_id"]
+                    }
+                }
+            },
+            "metricsSpec": [{"name": "count","type": "count"},
+            	{"name": "pv_world", "type": "longSum", "fieldName": "pv_world"},
+            	{"name": "click_world", "type": "longSum", "fieldName": "click_world"},
+                {"name": "pv_land", "type": "longSum", "fieldName": "pv_land"},
+                {"name": "click_land", "type": "longSum", "fieldName": "click_land"}
+            ],
+            "granularitySpec": {
+                "type": "uniform",
+                "segmentGranularity": "HOUR",
+                "queryGranularity": "HOUR",
+                "intervals": ${date}
+            }
+        },
+        "ioConfig": {
+            "type": "hadoop",
+            "inputSpec": {
+                "type": "static",
+                "paths": "${filePath}"
+            }
+        },
+        "tuningConfig": {
+            "type": "hadoop"
+        }
+    }
+}

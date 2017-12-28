@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.test.adCampaign.infoMzCampaignSpot.dao.InfoMzCampaignSpotMapper">
+    <resultMap id="BaseResultMap" type="com.test.adCampaign.infoMzCampaignSpot.domain.InfoMzCampaignSpot">
+        <id column="c_id" property="cId" jdbcType="BIGINT"/>
+        <id column="s_id" property="sId" jdbcType="BIGINT"/>
+        <result column="campaign_id" property="campaignId" jdbcType="VARCHAR"/>
+        <result column="spot_id_str" property="spotIdStr" jdbcType="VARCHAR"/>
+        <result column="campaign_name" property="campaignName" jdbcType="VARCHAR"/>
+        <result column="start_date" property="startDate" jdbcType="VARCHAR"/>
+        <result column="end_date" property="endDate" jdbcType="VARCHAR"/>
+        <result column="spot_name" property="spotName" jdbcType="VARCHAR"/>
+        <result column="channel_name" property="channelName" jdbcType="VARCHAR"/>
+        <result column="publisher_id" property="publisherId" jdbcType="VARCHAR"/>
+        <result column="website_name" property="websiteName" jdbcType="VARCHAR"/>
+        <result column="area_size" property="areaSize" jdbcType="VARCHAR"/>
+        <result column="vending_model" property="vendingModel" jdbcType="VARCHAR"/>
+        <result column="updatetime" property="updatetime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+    <delete id="deleteByPrimaryKey" parameterType="map">
+    delete from info_mz_campaign_spot
+    where c_id = #{cId,jdbcType=BIGINT}
+      and s_id = #{sId,jdbcType=BIGINT}
+  </delete>
+    <insert id="insert" parameterType="com.test.adCampaign.infoMzCampaignSpot.domain.InfoMzCampaignSpot">
+    insert into info_mz_campaign_spot (c_id, s_id, campaign_id, 
+      spot_id_str, campaign_name, start_date, 
+      end_date, spot_name, channel_name, 
+      publisher_id, website_name, area_size, 
+      vending_model, updatetime)
+    values (#{cId,jdbcType=BIGINT}, #{sId,jdbcType=BIGINT}, #{campaignId,jdbcType=VARCHAR}, 
+      #{spotIdStr,jdbcType=VARCHAR}, #{campaignName,jdbcType=VARCHAR}, #{startDate,jdbcType=VARCHAR}, 
+      #{endDate,jdbcType=VARCHAR}, #{spotName,jdbcType=VARCHAR}, #{channelName,jdbcType=VARCHAR}, 
+      #{publisherId,jdbcType=VARCHAR}, #{websiteName,jdbcType=VARCHAR}, #{areaSize,jdbcType=VARCHAR}, 
+      #{vendingModel,jdbcType=VARCHAR}, #{updatetime,jdbcType=TIMESTAMP})
+  </insert>
+    <update id="updateByPrimaryKey"
+            parameterType="com.test.adCampaign.infoMzCampaignSpot.domain.InfoMzCampaignSpot">
+    update info_mz_campaign_spot
+    set campaign_id = #{campaignId,jdbcType=VARCHAR},
+      spot_id_str = #{spotIdStr,jdbcType=VARCHAR},
+      campaign_name = #{campaignName,jdbcType=VARCHAR},
+      start_date = #{startDate,jdbcType=VARCHAR},
+      end_date = #{endDate,jdbcType=VARCHAR},
+      spot_name = #{spotName,jdbcType=VARCHAR},
+      channel_name = #{channelName,jdbcType=VARCHAR},
+      publisher_id = #{publisherId,jdbcType=VARCHAR},
+      website_name = #{websiteName,jdbcType=VARCHAR},
+      area_size = #{areaSize,jdbcType=VARCHAR},
+      vending_model = #{vendingModel,jdbcType=VARCHAR},
+      updatetime = #{updatetime,jdbcType=TIMESTAMP}
+    where c_id = #{cId,jdbcType=BIGINT}
+      and s_id = #{sId,jdbcType=BIGINT}
+  </update>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="map">
+    select c_id, s_id, campaign_id, spot_id_str, campaign_name, start_date, end_date, 
+    spot_name, channel_name, publisher_id, website_name, area_size, vending_model, updatetime
+    from info_mz_campaign_spot
+    where c_id = #{cId,jdbcType=BIGINT}
+      and s_id = #{sId,jdbcType=BIGINT}
+  </select>
+    <select id="selectAll" resultMap="BaseResultMap">
+    select campaign_id, campaign_name from info_mz_campaign_spot where campaign_name is not NULL
+    and campaign_id is not NULL GROUP BY campaign_id,campaign_name
+  </select>
+</mapper>

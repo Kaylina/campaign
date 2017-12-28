@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.test.adCampaign.clickiMzAdBase.dao.ClickiMzAdBaseMapper">
+    <resultMap id="BaseResultMap" type="com.test.adCampaign.clickiMzAdBase.domain.ClickiMzAdBase">
+        <id column="date" property="date" jdbcType="BIGINT"/>
+        <id column="site_id" property="siteId" jdbcType="BIGINT"/>
+        <id column="view_id" property="viewId" jdbcType="BIGINT"/>
+        <id column="ad_mz_campaign_id" property="adMzCampaignId" jdbcType="BIGINT"/>
+        <id column="ad_mz_spot_id" property="adMzSpotId" jdbcType="BIGINT"/>
+        <id column="ad_mz_keyword_id" property="adMzKeywordId" jdbcType="BIGINT"/>
+        <id column="ad_mz_cookie_id" property="adMzCookieId" jdbcType="BIGINT"/>
+        <id column="hour" property="hour" jdbcType="BIGINT"/>
+        <result column="session_duration" property="sessionDuration" jdbcType="BIGINT"/>
+        <result column="bounces" property="bounces" jdbcType="BIGINT"/>
+        <result column="viewport_size" property="viewportSize" jdbcType="BIGINT"/>
+        <result column="pageviews" property="pageviews" jdbcType="BIGINT"/>
+        <result column="sessions" property="sessions" jdbcType="BIGINT"/>
+        <result column="daily_ips" property="dailyIps" jdbcType="BIGINT"/>
+        <result column="users" property="users" jdbcType="BIGINT"/>
+        <result column="new_users" property="newUsers" jdbcType="BIGINT"/>
+        <result column="invalid_pvs" property="invalidPvs" jdbcType="BIGINT"/>
+        <result column="events" property="events" jdbcType="BIGINT"/>
+        <result column="boots" property="boots" jdbcType="BIGINT"/>
+        <result column="goal1" property="goal1" jdbcType="BIGINT"/>
+        <result column="goal2" property="goal2" jdbcType="BIGINT"/>
+        <result column="goal3" property="goal3" jdbcType="BIGINT"/>
+        <result column="goal4" property="goal4" jdbcType="BIGINT"/>
+        <result column="goal5" property="goal5" jdbcType="BIGINT"/>
+        <result column="goal6" property="goal6" jdbcType="BIGINT"/>
+        <result column="goal7" property="goal7" jdbcType="BIGINT"/>
+        <result column="goal8" property="goal8" jdbcType="BIGINT"/>
+        <result column="goal9" property="goal9" jdbcType="BIGINT"/>
+        <result column="goal10" property="goal10" jdbcType="BIGINT"/>
+        <result column="goal11" property="goal11" jdbcType="BIGINT"/>
+        <result column="goal12" property="goal12" jdbcType="BIGINT"/>
+        <result column="goal13" property="goal13" jdbcType="BIGINT"/>
+        <result column="goal14" property="goal14" jdbcType="BIGINT"/>
+        <result column="goal15" property="goal15" jdbcType="BIGINT"/>
+        <result column="goal16" property="goal16" jdbcType="BIGINT"/>
+        <result column="goal17" property="goal17" jdbcType="BIGINT"/>
+        <result column="goal18" property="goal18" jdbcType="BIGINT"/>
+        <result column="goal19" property="goal19" jdbcType="BIGINT"/>
+        <result column="goal20" property="goal20" jdbcType="BIGINT"/>
+        <result column="scrolls" property="scrolls" jdbcType="BIGINT"/>
+        <result column="keydowns" property="keydowns" jdbcType="BIGINT"/>
+        <result column="resizes" property="resizes" jdbcType="BIGINT"/>
+        <result column="mousedowns" property="mousedowns" jdbcType="BIGINT"/>
+        <result column="mousemoves" property="mousemoves" jdbcType="BIGINT"/>
+        <result column="swipes" property="swipes" jdbcType="BIGINT"/>
+        <result column="turns" property="turns" jdbcType="BIGINT"/>
+        <result column="pinchs" property="pinchs" jdbcType="BIGINT"/>
+        <result column="search_exit_sessions" property="searchExitSessions" jdbcType="BIGINT"/>
+        <result column="search_exits" property="searchExits" jdbcType="BIGINT"/>
+        <result column="searches" property="searches" jdbcType="BIGINT"/>
+        <result column="custom_metric1" property="customMetric1" jdbcType="BIGINT"/>
+        <result column="custom_metric2" property="customMetric2" jdbcType="BIGINT"/>
+        <result column="custom_metric3" property="customMetric3" jdbcType="BIGINT"/>
+        <result column="custom_metric4" property="customMetric4" jdbcType="BIGINT"/>
+        <result column="custom_metric5" property="customMetric5" jdbcType="BIGINT"/>
+        <result column="custom_metric6" property="customMetric6" jdbcType="BIGINT"/>
+        <result column="custom_metric7" property="customMetric7" jdbcType="BIGINT"/>
+        <result column="custom_metric8" property="customMetric8" jdbcType="BIGINT"/>
+        <result column="custom_metric9" property="customMetric9" jdbcType="BIGINT"/>
+        <result column="custom_metric10" property="customMetric10" jdbcType="BIGINT"/>
+        <result column="custom_metric11" property="customMetric11" jdbcType="BIGINT"/>
+        <result column="custom_metric12" property="customMetric12" jdbcType="BIGINT"/>
+        <result column="custom_metric13" property="customMetric13" jdbcType="BIGINT"/>
+        <result column="custom_metric14" property="customMetric14" jdbcType="BIGINT"/>
+        <result column="custom_metric15" property="customMetric15" jdbcType="BIGINT"/>
+        <result column="custom_metric16" property="customMetric16" jdbcType="BIGINT"/>
+        <result column="custom_metric17" property="customMetric17" jdbcType="BIGINT"/>
+        <result column="custom_metric18" property="customMetric18" jdbcType="BIGINT"/>
+        <result column="custom_metric19" property="customMetric19" jdbcType="BIGINT"/>
+        <result column="custom_metric20" property="customMetric20" jdbcType="BIGINT"/>
+        <result column="custom_metric21" property="customMetric21" jdbcType="BIGINT"/>
+        <result column="custom_metric22" property="customMetric22" jdbcType="BIGINT"/>
+        <result column="custom_metric23" property="customMetric23" jdbcType="BIGINT"/>
+        <result column="custom_metric24" property="customMetric24" jdbcType="BIGINT"/>
+        <result column="custom_metric25" property="customMetric25" jdbcType="BIGINT"/>
+        <result column="custom_metric26" property="customMetric26" jdbcType="BIGINT"/>
+        <result column="custom_metric27" property="customMetric27" jdbcType="BIGINT"/>
+        <result column="custom_metric28" property="customMetric28" jdbcType="BIGINT"/>
+        <result column="custom_metric29" property="customMetric29" jdbcType="BIGINT"/>
+        <result column="custom_metric30" property="customMetric30" jdbcType="BIGINT"/>
+        <result column="custom_metric31" property="customMetric31" jdbcType="BIGINT"/>
+        <result column="custom_metric32" property="customMetric32" jdbcType="BIGINT"/>
+        <result column="custom_metric33" property="customMetric33" jdbcType="BIGINT"/>
+        <result column="custom_metric34" property="customMetric34" jdbcType="BIGINT"/>
+        <result column="custom_metric35" property="customMetric35" jdbcType="BIGINT"/>
+        <result column="custom_metric36" property="customMetric36" jdbcType="BIGINT"/>
+        <result column="custom_metric37" property="customMetric37" jdbcType="BIGINT"/>
+        <result column="custom_metric38" property="customMetric38" jdbcType="BIGINT"/>
+        <result column="custom_metric39" property="customMetric39" jdbcType="BIGINT"/>
+        <result column="custom_metric40" property="customMetric40" jdbcType="BIGINT"/>
+        <result column="custom_metric41" property="customMetric41" jdbcType="BIGINT"/>
+        <result column="custom_metric42" property="customMetric42" jdbcType="BIGINT"/>
+        <result column="custom_metric43" property="customMetric43" jdbcType="BIGINT"/>
+        <result column="custom_metric44" property="customMetric44" jdbcType="BIGINT"/>
+        <result column="custom_metric45" property="customMetric45" jdbcType="BIGINT"/>
+        <result column="custom_metric46" property="customMetric46" jdbcType="BIGINT"/>
+        <result column="custom_metric47" property="customMetric47" jdbcType="BIGINT"/>
+        <result column="custom_metric48" property="customMetric48" jdbcType="BIGINT"/>
+        <result column="custom_metric49" property="customMetric49" jdbcType="BIGINT"/>
+        <result column="custom_metric50" property="customMetric50" jdbcType="BIGINT"/>
+        <result column="custom_metric51" property="customMetric51" jdbcType="BIGINT"/>
+        <result column="custom_metric52" property="customMetric52" jdbcType="BIGINT"/>
+        <result column="custom_metric53" property="customMetric53" jdbcType="BIGINT"/>
+        <result column="custom_metric54" property="customMetric54" jdbcType="BIGINT"/>
+        <result column="custom_metric55" property="customMetric55" jdbcType="BIGINT"/>
+        <result column="custom_metric56" property="customMetric56" jdbcType="BIGINT"/>
+        <result column="custom_metric57" property="customMetric57" jdbcType="BIGINT"/>
+        <result column="custom_metric58" property="customMetric58" jdbcType="BIGINT"/>
+        <result column="custom_metric59" property="customMetric59" jdbcType="BIGINT"/>
+        <result column="custom_metric60" property="customMetric60" jdbcType="BIGINT"/>
+        <result column="custom_metric61" property="customMetric61" jdbcType="BIGINT"/>
+        <result column="custom_metric62" property="customMetric62" jdbcType="BIGINT"/>
+        <result column="custom_metric63" property="customMetric63" jdbcType="BIGINT"/>
+        <result column="custom_metric64" property="customMetric64" jdbcType="BIGINT"/>
+        <result column="custom_metric65" property="customMetric65" jdbcType="BIGINT"/>
+        <result column="custom_metric66" property="customMetric66" jdbcType="BIGINT"/>
+        <result column="custom_metric67" property="customMetric67" jdbcType="BIGINT"/>
+        <result column="custom_metric68" property="customMetric68" jdbcType="BIGINT"/>
+        <result column="custom_metric69" property="customMetric69" jdbcType="BIGINT"/>
+        <result column="custom_metric70" property="customMetric70" jdbcType="BIGINT"/>
+        <result column="custom_metric71" property="customMetric71" jdbcType="BIGINT"/>
+        <result column="custom_metric72" property="customMetric72" jdbcType="BIGINT"/>
+        <result column="custom_metric73" property="customMetric73" jdbcType="BIGINT"/>
+        <result column="custom_metric74" property="customMetric74" jdbcType="BIGINT"/>
+        <result column="custom_metric75" property="customMetric75" jdbcType="BIGINT"/>
+        <result column="custom_metric76" property="customMetric76" jdbcType="BIGINT"/>
+        <result column="custom_metric77" property="customMetric77" jdbcType="BIGINT"/>
+        <result column="custom_metric78" property="customMetric78" jdbcType="BIGINT"/>
+        <result column="custom_metric79" property="customMetric79" jdbcType="BIGINT"/>
+        <result column="custom_metric80" property="customMetric80" jdbcType="BIGINT"/>
+        <result column="custom_metric81" property="customMetric81" jdbcType="BIGINT"/>
+        <result column="custom_metric82" property="customMetric82" jdbcType="BIGINT"/>
+        <result column="custom_metric83" property="customMetric83" jdbcType="BIGINT"/>
+        <result column="custom_metric84" property="customMetric84" jdbcType="BIGINT"/>
+        <result column="custom_metric85" property="customMetric85" jdbcType="BIGINT"/>
+        <result column="custom_metric86" property="customMetric86" jdbcType="BIGINT"/>
+        <result column="custom_metric87" property="customMetric87" jdbcType="BIGINT"/>
+        <result column="custom_metric88" property="customMetric88" jdbcType="BIGINT"/>
+        <result column="custom_metric89" property="customMetric89" jdbcType="BIGINT"/>
+        <result column="custom_metric90" property="customMetric90" jdbcType="BIGINT"/>
+        <result column="custom_metric91" property="customMetric91" jdbcType="BIGINT"/>
+        <result column="custom_metric92" property="customMetric92" jdbcType="BIGINT"/>
+        <result column="custom_metric93" property="customMetric93" jdbcType="BIGINT"/>
+        <result column="custom_metric94" property="customMetric94" jdbcType="BIGINT"/>
+        <result column="custom_metric95" property="customMetric95" jdbcType="BIGINT"/>
+        <result column="custom_metric96" property="customMetric96" jdbcType="BIGINT"/>
+        <result column="custom_metric97" property="customMetric97" jdbcType="BIGINT"/>
+        <result column="custom_metric98" property="customMetric98" jdbcType="BIGINT"/>
+        <result column="custom_metric99" property="customMetric99" jdbcType="BIGINT"/>
+        <result column="custom_metric100" property="customMetric100" jdbcType="BIGINT"/>
+    </resultMap>
+    <delete id="deleteByPrimaryKey" parameterType="map">
+    delete from clicki_mz_ad_base
+    where date = #{date,jdbcType=BIGINT}
+      and site_id = #{siteId,jdbcType=BIGINT}
+      and view_id = #{viewId,jdbcType=BIGINT}
+      and ad_mz_campaign_id = #{adMzCampaignId,jdbcType=BIGINT}
+      and ad_mz_spot_id = #{adMzSpotId,jdbcType=BIGINT}
+      and ad_mz_keyword_id = #{adMzKeywordId,jdbcType=BIGINT}
+      and ad_mz_cookie_id = #{adMzCookieId,jdbcType=BIGINT}
+      and hour = #{hour,jdbcType=BIGINT}
+  </delete>
+    <insert id="insert" parameterType="com.test.adCampaign.clickiMzAdBase.domain.ClickiMzAdBase">
+    insert into clicki_mz_ad_base (date, site_id, view_id, 
+      ad_mz_campaign_id, ad_mz_spot_id, ad_mz_keyword_id, 
+      ad_mz_cookie_id, hour, session_duration, 
+      bounces, viewport_size, pageviews, 
+      sessions, daily_ips, users, 
+      new_users, invalid_pvs, events, 
+      boots, goal1, goal2, goal3, 
+      goal4, goal5, goal6, goal7, 
+      goal8, goal9, goal10, 
+      goal11, goal12, goal13, 
+      goal14, goal15, goal16, 
+      goal17, goal18, goal19, 
+      goal20, scrolls, keydowns, 
+      resizes, mousedowns, mousemoves, 
+      swipes, turns, pinchs, 
+      search_exit_sessions, search_exits, searches, 
+      custom_metric1, custom_metric2, custom_metric3, 
+      custom_metric4, custom_metric5, custom_metric6, 
+      custom_metric7, custom_metric8, custom_metric9, 
+      custom_metric10, custom_metric11, custom_metric12, 
+      custom_metric13, custom_metric14, custom_metric15, 
+      custom_metric16, custom_metric17, custom_metric18, 
+      custom_metric19, custom_metric20, custom_metric21, 
+      custom_metric22, custom_metric23, custom_metric24, 
+      custom_metric25, custom_metric26, custom_metric27, 
+      custom_metric28, custom_metric29, custom_metric30, 
+      custom_metric31, custom_metric32, custom_metric33, 
+      custom_metric34, custom_metric35, custom_metric36, 
+      custom_metric37, custom_metric38, custom_metric39, 
+      custom_metric40, custom_metric41, custom_metric42, 
+      custom_metric43, custom_metric44, custom_metric45, 
+      custom_metric46, custom_metric47, custom_metric48, 
+      custom_metric49, custom_metric50, custom_metric51, 
+      custom_metric52, custom_metric53, custom_metric54, 
+      custom_metric55, custom_metric56, custom_metric57, 
+      custom_metric58, custom_metric59, custom_metric60, 
+      custom_metric61, custom_metric62, custom_metric63, 
+      custom_metric64, custom_metric65, custom_metric66, 
+      custom_metric67, custom_metric68, custom_metric69, 
+      custom_metric70, custom_metric71, custom_metric72, 
+      custom_metric73, custom_metric74, custom_metric75, 
+      custom_metric76, custom_metric77, custom_metric78, 
+      custom_metric79, custom_metric80, custom_metric81, 
+      custom_metric82, custom_metric83, custom_metric84, 
+      custom_metric85, custom_metric86, custom_metric87, 
+      custom_metric88, custom_metric89, custom_metric90, 
+      custom_metric91, custom_metric92, custom_metric93, 
+      custom_metric94, custom_metric95, custom_metric96, 
+      custom_metric97, custom_metric98, custom_metric99, 
+      custom_metric100)
+    values (#{date,jdbcType=BIGINT}, #{siteId,jdbcType=BIGINT}, #{viewId,jdbcType=BIGINT}, 
+      #{adMzCampaignId,jdbcType=BIGINT}, #{adMzSpotId,jdbcType=BIGINT}, #{adMzKeywordId,jdbcType=BIGINT}, 
+      #{adMzCookieId,jdbcType=BIGINT}, #{hour,jdbcType=BIGINT}, #{sessionDuration,jdbcType=BIGINT}, 
+      #{bounces,jdbcType=BIGINT}, #{viewportSize,jdbcType=BIGINT}, #{pageviews,jdbcType=BIGINT}, 
+      #{sessions,jdbcType=BIGINT}, #{dailyIps,jdbcType=BIGINT}, #{users,jdbcType=BIGINT}, 
+      #{newUsers,jdbcType=BIGINT}, #{invalidPvs,jdbcType=BIGINT}, #{events,jdbcType=BIGINT}, 
+      #{boots,jdbcType=BIGINT}, #{goal1,jdbcType=BIGINT}, #{goal2,jdbcType=BIGINT}, #{goal3,jdbcType=BIGINT}, 
+      #{goal4,jdbcType=BIGINT}, #{goal5,jdbcType=BIGINT}, #{goal6,jdbcType=BIGINT}, #{goal7,jdbcType=BIGINT}, 
+      #{goal8,jdbcType=BIGINT}, #{goal9,jdbcType=BIGINT}, #{goal10,jdbcType=BIGINT}, 
+      #{goal11,jdbcType=BIGINT}, #{goal12,jdbcType=BIGINT}, #{goal13,jdbcType=BIGINT}, 
+      #{goal14,jdbcType=BIGINT}, #{goal15,jdbcType=BIGINT}, #{goal16,jdbcType=BIGINT}, 
+      #{goal17,jdbcType=BIGINT}, #{goal18,jdbcType=BIGINT}, #{goal19,jdbcType=BIGINT}, 
+      #{goal20,jdbcType=BIGINT}, #{scrolls,jdbcType=BIGINT}, #{keydowns,jdbcType=BIGINT}, 
+      #{resizes,jdbcType=BIGINT}, #{mousedowns,jdbcType=BIGINT}, #{mousemoves,jdbcType=BIGINT}, 
+      #{swipes,jdbcType=BIGINT}, #{turns,jdbcType=BIGINT}, #{pinchs,jdbcType=BIGINT}, 
+      #{searchExitSessions,jdbcType=BIGINT}, #{searchExits,jdbcType=BIGINT}, #{searches,jdbcType=BIGINT}, 
+      #{customMetric1,jdbcType=BIGINT}, #{customMetric2,jdbcType=BIGINT}, #{customMetric3,jdbcType=BIGINT}, 
+      #{customMetric4,jdbcType=BIGINT}, #{customMetric5,jdbcType=BIGINT}, #{customMetric6,jdbcType=BIGINT}, 
+      #{customMetric7,jdbcType=BIGINT}, #{customMetric8,jdbcType=BIGINT}, #{customMetric9,jdbcType=BIGINT}, 
+      #{customMetric10,jdbcType=BIGINT}, #{customMetric11,jdbcType=BIGINT}, #{customMetric12,jdbcType=BIGINT}, 
+      #{customMetric13,jdbcType=BIGINT}, #{customMetric14,jdbcType=BIGINT}, #{customMetric15,jdbcType=BIGINT}, 
+      #{customMetric16,jdbcType=BIGINT}, #{customMetric17,jdbcType=BIGINT}, #{customMetric18,jdbcType=BIGINT}, 
+      #{customMetric19,jdbcType=BIGINT}, #{customMetric20,jdbcType=BIGINT}, #{customMetric21,jdbcType=BIGINT}, 
+      #{customMetric22,jdbcType=BIGINT}, #{customMetric23,jdbcType=BIGINT}, #{customMetric24,jdbcType=BIGINT}, 
+      #{customMetric25,jdbcType=BIGINT}, #{customMetric26,jdbcType=BIGINT}, #{customMetric27,jdbcType=BIGINT}, 
+      #{customMetric28,jdbcType=BIGINT}, #{customMetric29,jdbcType=BIGINT}, #{customMetric30,jdbcType=BIGINT}, 
+      #{customMetric31,jdbcType=BIGINT}, #{customMetric32,jdbcType=BIGINT}, #{customMetric33,jdbcType=BIGINT}, 
+      #{customMetric34,jdbcType=BIGINT}, #{customMetric35,jdbcType=BIGINT}, #{customMetric36,jdbcType=BIGINT}, 
+      #{customMetric37,jdbcType=BIGINT}, #{customMetric38,jdbcType=BIGINT}, #{customMetric39,jdbcType=BIGINT}, 
+      #{customMetric40,jdbcType=BIGINT}, #{customMetric41,jdbcType=BIGINT}, #{customMetric42,jdbcType=BIGINT}, 
+      #{customMetric43,jdbcType=BIGINT}, #{customMetric44,jdbcType=BIGINT}, #{customMetric45,jdbcType=BIGINT}, 
+      #{customMetric46,jdbcType=BIGINT}, #{customMetric47,jdbcType=BIGINT}, #{customMetric48,jdbcType=BIGINT}, 
+      #{customMetric49,jdbcType=BIGINT}, #{customMetric50,jdbcType=BIGINT}, #{customMetric51,jdbcType=BIGINT}, 
+      #{customMetric52,jdbcType=BIGINT}, #{customMetric53,jdbcType=BIGINT}, #{customMetric54,jdbcType=BIGINT}, 
+      #{customMetric55,jdbcType=BIGINT}, #{customMetric56,jdbcType=BIGINT}, #{customMetric57,jdbcType=BIGINT}, 
+      #{customMetric58,jdbcType=BIGINT}, #{customMetric59,jdbcType=BIGINT}, #{customMetric60,jdbcType=BIGINT}, 
+      #{customMetric61,jdbcType=BIGINT}, #{customMetric62,jdbcType=BIGINT}, #{customMetric63,jdbcType=BIGINT}, 
+      #{customMetric64,jdbcType=BIGINT}, #{customMetric65,jdbcType=BIGINT}, #{customMetric66,jdbcType=BIGINT}, 
+      #{customMetric67,jdbcType=BIGINT}, #{customMetric68,jdbcType=BIGINT}, #{customMetric69,jdbcType=BIGINT}, 
+      #{customMetric70,jdbcType=BIGINT}, #{customMetric71,jdbcType=BIGINT}, #{customMetric72,jdbcType=BIGINT}, 
+      #{customMetric73,jdbcType=BIGINT}, #{customMetric74,jdbcType=BIGINT}, #{customMetric75,jdbcType=BIGINT}, 
+      #{customMetric76,jdbcType=BIGINT}, #{customMetric77,jdbcType=BIGINT}, #{customMetric78,jdbcType=BIGINT}, 
+      #{customMetric79,jdbcType=BIGINT}, #{customMetric80,jdbcType=BIGINT}, #{customMetric81,jdbcType=BIGINT}, 
+      #{customMetric82,jdbcType=BIGINT}, #{customMetric83,jdbcType=BIGINT}, #{customMetric84,jdbcType=BIGINT}, 
+      #{customMetric85,jdbcType=BIGINT}, #{customMetric86,jdbcType=BIGINT}, #{customMetric87,jdbcType=BIGINT}, 
+      #{customMetric88,jdbcType=BIGINT}, #{customMetric89,jdbcType=BIGINT}, #{customMetric90,jdbcType=BIGINT}, 
+      #{customMetric91,jdbcType=BIGINT}, #{customMetric92,jdbcType=BIGINT}, #{customMetric93,jdbcType=BIGINT}, 
+      #{customMetric94,jdbcType=BIGINT}, #{customMetric95,jdbcType=BIGINT}, #{customMetric96,jdbcType=BIGINT}, 
+      #{customMetric97,jdbcType=BIGINT}, #{customMetric98,jdbcType=BIGINT}, #{customMetric99,jdbcType=BIGINT}, 
+      #{customMetric100,jdbcType=BIGINT})
+  </insert>
+    <update id="updateByPrimaryKey" parameterType="com.test.adCampaign.clickiMzAdBase.domain.ClickiMzAdBase">
+    update clicki_mz_ad_base
+    set session_duration = #{sessionDuration,jdbcType=BIGINT},
+      bounces = #{bounces,jdbcType=BIGINT},
+      viewport_size = #{viewportSize,jdbcType=BIGINT},
+      pageviews = #{pageviews,jdbcType=BIGINT},
+      sessions = #{sessions,jdbcType=BIGINT},
+      daily_ips = #{dailyIps,jdbcType=BIGINT},
+      users = #{users,jdbcType=BIGINT},
+      new_users = #{newUsers,jdbcType=BIGINT},
+      invalid_pvs = #{invalidPvs,jdbcType=BIGINT},
+      events = #{events,jdbcType=BIGINT},
+      boots = #{boots,jdbcType=BIGINT},
+      goal1 = #{goal1,jdbcType=BIGINT},
+      goal2 = #{goal2,jdbcType=BIGINT},
+      goal3 = #{goal3,jdbcType=BIGINT},
+      goal4 = #{goal4,jdbcType=BIGINT},
+      goal5 = #{goal5,jdbcType=BIGINT},
+      goal6 = #{goal6,jdbcType=BIGINT},
+      goal7 = #{goal7,jdbcType=BIGINT},
+      goal8 = #{goal8,jdbcType=BIGINT},
+      goal9 = #{goal9,jdbcType=BIGINT},
+      goal10 = #{goal10,jdbcType=BIGINT},
+      goal11 = #{goal11,jdbcType=BIGINT},
+      goal12 = #{goal12,jdbcType=BIGINT},
+      goal13 = #{goal13,jdbcType=BIGINT},
+      goal14 = #{goal14,jdbcType=BIGINT},
+      goal15 = #{goal15,jdbcType=BIGINT},
+      goal16 = #{goal16,jdbcType=BIGINT},
+      goal17 = #{goal17,jdbcType=BIGINT},
+      goal18 = #{goal18,jdbcType=BIGINT},
+      goal19 = #{goal19,jdbcType=BIGINT},
+      goal20 = #{goal20,jdbcType=BIGINT},
+      scrolls = #{scrolls,jdbcType=BIGINT},
+      keydowns = #{keydowns,jdbcType=BIGINT},
+      resizes = #{resizes,jdbcType=BIGINT},
+      mousedowns = #{mousedowns,jdbcType=BIGINT},
+      mousemoves = #{mousemoves,jdbcType=BIGINT},
+      swipes = #{swipes,jdbcType=BIGINT},
+      turns = #{turns,jdbcType=BIGINT},
+      pinchs = #{pinchs,jdbcType=BIGINT},
+      search_exit_sessions = #{searchExitSessions,jdbcType=BIGINT},
+      search_exits = #{searchExits,jdbcType=BIGINT},
+      searches = #{searches,jdbcType=BIGINT},
+      custom_metric1 = #{customMetric1,jdbcType=BIGINT},
+      custom_metric2 = #{customMetric2,jdbcType=BIGINT},
+      custom_metric3 = #{customMetric3,jdbcType=BIGINT},
+      custom_metric4 = #{customMetric4,jdbcType=BIGINT},
+      custom_metric5 = #{customMetric5,jdbcType=BIGINT},
+      custom_metric6 = #{customMetric6,jdbcType=BIGINT},
+      custom_metric7 = #{customMetric7,jdbcType=BIGINT},
+      custom_metric8 = #{customMetric8,jdbcType=BIGINT},
+      custom_metric9 = #{customMetric9,jdbcType=BIGINT},
+      custom_metric10 = #{customMetric10,jdbcType=BIGINT},
+      custom_metric11 = #{customMetric11,jdbcType=BIGINT},
+      custom_metric12 = #{customMetric12,jdbcType=BIGINT},
+      custom_metric13 = #{customMetric13,jdbcType=BIGINT},
+      custom_metric14 = #{customMetric14,jdbcType=BIGINT},
+      custom_metric15 = #{customMetric15,jdbcType=BIGINT},
+      custom_metric16 = #{customMetric16,jdbcType=BIGINT},
+      custom_metric17 = #{customMetric17,jdbcType=BIGINT},
+      custom_metric18 = #{customMetric18,jdbcType=BIGINT},
+      custom_metric19 = #{customMetric19,jdbcType=BIGINT},
+      custom_metric20 = #{customMetric20,jdbcType=BIGINT},
+      custom_metric21 = #{customMetric21,jdbcType=BIGINT},
+      custom_metric22 = #{customMetric22,jdbcType=BIGINT},
+      custom_metric23 = #{customMetric23,jdbcType=BIGINT},
+      custom_metric24 = #{customMetric24,jdbcType=BIGINT},
+      custom_metric25 = #{customMetric25,jdbcType=BIGINT},
+      custom_metric26 = #{customMetric26,jdbcType=BIGINT},
+      custom_metric27 = #{customMetric27,jdbcType=BIGINT},
+      custom_metric28 = #{customMetric28,jdbcType=BIGINT},
+      custom_metric29 = #{customMetric29,jdbcType=BIGINT},
+      custom_metric30 = #{customMetric30,jdbcType=BIGINT},
+      custom_metric31 = #{customMetric31,jdbcType=BIGINT},
+      custom_metric32 = #{customMetric32,jdbcType=BIGINT},
+      custom_metric33 = #{customMetric33,jdbcType=BIGINT},
+      custom_metric34 = #{customMetric34,jdbcType=BIGINT},
+      custom_metric35 = #{customMetric35,jdbcType=BIGINT},
+      custom_metric36 = #{customMetric36,jdbcType=BIGINT},
+      custom_metric37 = #{customMetric37,jdbcType=BIGINT},
+      custom_metric38 = #{customMetric38,jdbcType=BIGINT},
+      custom_metric39 = #{customMetric39,jdbcType=BIGINT},
+      custom_metric40 = #{customMetric40,jdbcType=BIGINT},
+      custom_metric41 = #{customMetric41,jdbcType=BIGINT},
+      custom_metric42 = #{customMetric42,jdbcType=BIGINT},
+      custom_metric43 = #{customMetric43,jdbcType=BIGINT},
+      custom_metric44 = #{customMetric44,jdbcType=BIGINT},
+      custom_metric45 = #{customMetric45,jdbcType=BIGINT},
+      custom_metric46 = #{customMetric46,jdbcType=BIGINT},
+      custom_metric47 = #{customMetric47,jdbcType=BIGINT},
+      custom_metric48 = #{customMetric48,jdbcType=BIGINT},
+      custom_metric49 = #{customMetric49,jdbcType=BIGINT},
+      custom_metric50 = #{customMetric50,jdbcType=BIGINT},
+      custom_metric51 = #{customMetric51,jdbcType=BIGINT},
+      custom_metric52 = #{customMetric52,jdbcType=BIGINT},
+      custom_metric53 = #{customMetric53,jdbcType=BIGINT},
+      custom_metric54 = #{customMetric54,jdbcType=BIGINT},
+      custom_metric55 = #{customMetric55,jdbcType=BIGINT},
+      custom_metric56 = #{customMetric56,jdbcType=BIGINT},
+      custom_metric57 = #{customMetric57,jdbcType=BIGINT},
+      custom_metric58 = #{customMetric58,jdbcType=BIGINT},
+      custom_metric59 = #{customMetric59,jdbcType=BIGINT},
+      custom_metric60 = #{customMetric60,jdbcType=BIGINT},
+      custom_metric61 = #{customMetric61,jdbcType=BIGINT},
+      custom_metric62 = #{customMetric62,jdbcType=BIGINT},
+      custom_metric63 = #{customMetric63,jdbcType=BIGINT},
+      custom_metric64 = #{customMetric64,jdbcType=BIGINT},
+      custom_metric65 = #{customMetric65,jdbcType=BIGINT},
+      custom_metric66 = #{customMetric66,jdbcType=BIGINT},
+      custom_metric67 = #{customMetric67,jdbcType=BIGINT},
+      custom_metric68 = #{customMetric68,jdbcType=BIGINT},
+      custom_metric69 = #{customMetric69,jdbcType=BIGINT},
+      custom_metric70 = #{customMetric70,jdbcType=BIGINT},
+      custom_metric71 = #{customMetric71,jdbcType=BIGINT},
+      custom_metric72 = #{customMetric72,jdbcType=BIGINT},
+      custom_metric73 = #{customMetric73,jdbcType=BIGINT},
+      custom_metric74 = #{customMetric74,jdbcType=BIGINT},
+      custom_metric75 = #{customMetric75,jdbcType=BIGINT},
+      custom_metric76 = #{customMetric76,jdbcType=BIGINT},
+      custom_metric77 = #{customMetric77,jdbcType=BIGINT},
+      custom_metric78 = #{customMetric78,jdbcType=BIGINT},
+      custom_metric79 = #{customMetric79,jdbcType=BIGINT},
+      custom_metric80 = #{customMetric80,jdbcType=BIGINT},
+      custom_metric81 = #{customMetric81,jdbcType=BIGINT},
+      custom_metric82 = #{customMetric82,jdbcType=BIGINT},
+      custom_metric83 = #{customMetric83,jdbcType=BIGINT},
+      custom_metric84 = #{customMetric84,jdbcType=BIGINT},
+      custom_metric85 = #{customMetric85,jdbcType=BIGINT},
+      custom_metric86 = #{customMetric86,jdbcType=BIGINT},
+      custom_metric87 = #{customMetric87,jdbcType=BIGINT},
+      custom_metric88 = #{customMetric88,jdbcType=BIGINT},
+      custom_metric89 = #{customMetric89,jdbcType=BIGINT},
+      custom_metric90 = #{customMetric90,jdbcType=BIGINT},
+      custom_metric91 = #{customMetric91,jdbcType=BIGINT},
+      custom_metric92 = #{customMetric92,jdbcType=BIGINT},
+      custom_metric93 = #{customMetric93,jdbcType=BIGINT},
+      custom_metric94 = #{customMetric94,jdbcType=BIGINT},
+      custom_metric95 = #{customMetric95,jdbcType=BIGINT},
+      custom_metric96 = #{customMetric96,jdbcType=BIGINT},
+      custom_metric97 = #{customMetric97,jdbcType=BIGINT},
+      custom_metric98 = #{customMetric98,jdbcType=BIGINT},
+      custom_metric99 = #{customMetric99,jdbcType=BIGINT},
+      custom_metric100 = #{customMetric100,jdbcType=BIGINT}
+    where date = #{date,jdbcType=BIGINT}
+      and site_id = #{siteId,jdbcType=BIGINT}
+      and view_id = #{viewId,jdbcType=BIGINT}
+      and ad_mz_campaign_id = #{adMzCampaignId,jdbcType=BIGINT}
+      and ad_mz_spot_id = #{adMzSpotId,jdbcType=BIGINT}
+      and ad_mz_keyword_id = #{adMzKeywordId,jdbcType=BIGINT}
+      and ad_mz_cookie_id = #{adMzCookieId,jdbcType=BIGINT}
+      and hour = #{hour,jdbcType=BIGINT}
+  </update>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="map">
+    select date, site_id, view_id, ad_mz_campaign_id, ad_mz_spot_id, ad_mz_keyword_id, 
+    ad_mz_cookie_id, hour, session_duration, bounces, viewport_size, pageviews, sessions, 
+    daily_ips, users, new_users, invalid_pvs, events, boots, goal1, goal2, goal3, goal4, 
+    goal5, goal6, goal7, goal8, goal9, goal10, goal11, goal12, goal13, goal14, goal15, 
+    goal16, goal17, goal18, goal19, goal20, scrolls, keydowns, resizes, mousedowns, mousemoves, 
+    swipes, turns, pinchs, search_exit_sessions, search_exits, searches, custom_metric1, 
+    custom_metric2, custom_metric3, custom_metric4, custom_metric5, custom_metric6, custom_metric7, 
+    custom_metric8, custom_metric9, custom_metric10, custom_metric11, custom_metric12, 
+    custom_metric13, custom_metric14, custom_metric15, custom_metric16, custom_metric17, 
+    custom_metric18, custom_metric19, custom_metric20, custom_metric21, custom_metric22, 
+    custom_metric23, custom_metric24, custom_metric25, custom_metric26, custom_metric27, 
+    custom_metric28, custom_metric29, custom_metric30, custom_metric31, custom_metric32, 
+    custom_metric33, custom_metric34, custom_metric35, custom_metric36, custom_metric37, 
+    custom_metric38, custom_metric39, custom_metric40, custom_metric41, custom_metric42, 
+    custom_metric43, custom_metric44, custom_metric45, custom_metric46, custom_metric47, 
+    custom_metric48, custom_metric49, custom_metric50, custom_metric51, custom_metric52, 
+    custom_metric53, custom_metric54, custom_metric55, custom_metric56, custom_metric57, 
+    custom_metric58, custom_metric59, custom_metric60, custom_metric61, custom_metric62, 
+    custom_metric63, custom_metric64, custom_metric65, custom_metric66, custom_metric67, 
+    custom_metric68, custom_metric69, custom_metric70, custom_metric71, custom_metric72, 
+    custom_metric73, custom_metric74, custom_metric75, custom_metric76, custom_metric77, 
+    custom_metric78, custom_metric79, custom_metric80, custom_metric81, custom_metric82, 
+    custom_metric83, custom_metric84, custom_metric85, custom_metric86, custom_metric87, 
+    custom_metric88, custom_metric89, custom_metric90, custom_metric91, custom_metric92, 
+    custom_metric93, custom_metric94, custom_metric95, custom_metric96, custom_metric97, 
+    custom_metric98, custom_metric99, custom_metric100
+    from clicki_mz_ad_base
+    where date = #{date,jdbcType=BIGINT}
+      and site_id = #{siteId,jdbcType=BIGINT}
+      and view_id = #{viewId,jdbcType=BIGINT}
+      and ad_mz_campaign_id = #{adMzCampaignId,jdbcType=BIGINT}
+      and ad_mz_spot_id = #{adMzSpotId,jdbcType=BIGINT}
+      and ad_mz_keyword_id = #{adMzKeywordId,jdbcType=BIGINT}
+      and ad_mz_cookie_id = #{adMzCookieId,jdbcType=BIGINT}
+      and hour = #{hour,jdbcType=BIGINT}
+  </select>
+    <select id="selectByDate" resultMap="BaseResultMap">
+    select ad_mz_campaign_id, site_id, view_id from clicki_mz_ad_base where date = #{date,jdbcType=BIGINT}
+    and ad_mz_campaign_id !=0 GROUP BY ad_mz_campaign_id, site_id, view_id
+  </select>
+
+    <select id="selectSpots" resultMap="BaseResultMap">
+        select ad_mz_campaign_id, ad_mz_spot_id, site_id, view_id from clicki_mz_ad_base where date = #{date,jdbcType=BIGINT}
+        and ad_mz_campaign_id !=0 and ad_mz_spot_id !=0 GROUP BY ad_mz_campaign_id, ad_mz_spot_id, site_id, view_id
+    </select>
+
+
+</mapper>

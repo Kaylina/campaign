@@ -1,0 +1,54 @@
+{
+	"queryType": "groupBy",
+	"dataSource": "clicki_mz_ad_base",
+	"dimensions": [
+		"site_id",
+		"view_id",
+        "ad_mz_campaign_id",
+		"ad_mz_spot_id"
+	],
+	"granularity": "all",
+    "filter": {
+        "type": "and",
+        "fields": [
+			{
+		        "type": "not",
+		        "field": {
+		          "type": "selector",
+		          "dimension": "ad_mz_campaign_id",
+		          "value": 0
+		        }
+     		},
+			{
+		        "type": "not",
+		        "field": {
+		          "type": "selector",
+		          "dimension": "ad_mz_spot_id",
+		          "value": 0
+		        }
+     		}
+        ]
+    },
+	"limitSpec": {
+		"type": "default",
+		"limit": 100000,
+		"columns": [
+			{
+				"asNumber": true,
+				"dimension": "pageviews",
+                "direction": "DESCENDING"
+			}
+		]
+	},
+	"aggregations": [
+		{
+			"type": "longSum",
+			"name": "pageviews",
+			"fieldName": "pageviews"
+		}
+	],
+	"intervals": ${date},
+	"context": {
+		"timeout": 600000
+	}
+}
